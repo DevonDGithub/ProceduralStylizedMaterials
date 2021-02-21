@@ -1,6 +1,13 @@
 # Procedural Stylized Materials
 
-<img alt="SubstanceDesigner" width="28px" src="https://howtolearn.me/wp-content/uploads/2015/11/Substance-Designer-Logo.png" />
+<img align="left" alt="SubstanceDesigner" width="28px" src="https://howtolearn.me/wp-content/uploads/2015/11/Substance-Designer-Logo.png" />
+<img align="left" alt="Unreal Engine" width="32px" src="https://vectorified.com/images/epic-games-icon-35.png" />
+
+<br/>
+<br/>
+
+![](Images/ducharmed_project_d_part_3_sheet_1.png)
+
 
 ## Overview
 
@@ -20,6 +27,8 @@ The primary goal of designing the materials then was to manipulate the shapes pr
 
 The basic principle behind each material is that various maps are distorted and blended together to form the basic shapes that become the details in our diffuse map. The `Brick` material is the first example of this; the material consists of a square that is distorted then put into an offset grid where the entire wall pattern is given additional detail.
 
+![](Images/ducharmed_project_d_part_3_sheet_3.png)
+
 The small, distorted rectangles that make up each individual brick in the overall `Brick` material are created by taking a square and blending it with a `Scope Blue Grayscale` with a modified `Perlin Noise` node to create the chipped edges of each brick. This is then blended again with a `Bevel` node which uses a modified `Cells 1` node to create cracks and chips in the interior of each brick. This shape is then passed into the `Pattern Input` input of the `Tile Sampler` node and blended with `Directional Scratches`, `Grunge Map 005` and a `Gradient Map` mode containing various shades of the red brick tone that makes the bricks look like they are damaged, have dirt on them and are of the color one would expect bricks to be.
 
 ![](Images/BrickNodes.PNG)
@@ -38,9 +47,13 @@ The primary process I used to apply these materials to objects was to bring them
 
 ![](Images/Bench.PNG)
 
-### Into the Engine *(In Progress)*
+### Into the Engine
 
-*Note: The following section is in progress and will be formally completed after the graduate review at Savannah College of Art and Design.*
+After each of these shaders were refined, some of them were able to make it into the engine. Rather than importing the Substance Painter files for each modular asset into the engine itself, I exported all the maps I needed out of the program and imported them into Unreal itself.
+
+![](Images/ducharmed_project_d_part_3_sheet_1.png)
+
+The only maps used were `Diffuse`, `Specular` and `Normal` as those were the only requirements for the course. In a more professional workflow, additional maps such as `Roughness`, `Metal`, `Height` and `Ambient Occulsion`.
 
 # Reflections
 
